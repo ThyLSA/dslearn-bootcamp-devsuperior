@@ -12,15 +12,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_section")
-public class Section implements Serializable{
+public class Section implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id; 
+	private Long id;
 	private String title;
 	private String description;
-	private String position;
+	private Integer position;
 	private String imgUri;
 	
 	@ManyToOne
@@ -34,7 +34,7 @@ public class Section implements Serializable{
 	public Section() {
 	}
 
-	public Section(Long id, String title, String description, String position, String imgUri, Resource resource,
+	public Section(Long id, String title, String description, Integer position, String imgUri, Resource resource,
 			Section prerequisite) {
 		super();
 		this.id = id;
@@ -70,11 +70,11 @@ public class Section implements Serializable{
 		this.description = description;
 	}
 
-	public String getPosition() {
+	public Integer getPosition() {
 		return position;
 	}
 
-	public void setPosition(String position) {
+	public void setPosition(Integer position) {
 		this.position = position;
 	}
 
